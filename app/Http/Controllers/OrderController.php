@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\OrderRequest;
 use App\Services\FoodService;
-use Illuminate\Http\Request;
+use App\Services\OrderService;
 
 class OrderController extends Controller
 {
     protected $food_service;
+    protected $order_service;
 
-    public function __construct(FoodService $food_service)
+    public function __construct(FoodService $food_service, OrderService $order_service)
     {
         $this->food_service = $food_service;
+        $this->order_service = $order_service;
     }
 
     public function getMenu()
@@ -22,7 +24,8 @@ class OrderController extends Controller
 
     public function order(OrderRequest $orderRequest)
     {
-        die($orderRequest->food_id);
-        return response($this->food_service->getMenu());
+        return response([
+            "order_status" => $this->order_service->saveOrder($orderRequest->food_id)
+        ]);
     }
 }
