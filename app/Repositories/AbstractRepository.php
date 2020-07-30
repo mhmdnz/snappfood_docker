@@ -20,4 +20,9 @@ class AbstractRepository
     {
         return $this->model->find($id);
     }
+
+    public function getWith($id, array $relations)
+    {
+        return $this->model->with($relations)->where('id', $id)->get();
+    }
 }

@@ -25,6 +25,11 @@ class FoodService
         return $this->food_repository->get($id);
     }
 
+    public function getWith($id, array $relations)
+    {
+        return $this->food_repository->getWith($id, $relations);
+    }
+
     public function getAll()
     {
         return $this->food_repository->getAll();
