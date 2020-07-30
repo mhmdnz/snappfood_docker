@@ -20,6 +20,11 @@ class FoodService
         return $this->food_repository->save($request);
     }
 
+    public function get($id)
+    {
+        return $this->food_repository->get($id);
+    }
+
     public function getAll()
     {
         return $this->food_repository->getAll();
