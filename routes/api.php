@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/food', 'FoodController@getAll');
+
+Route::get('/menu', 'OrderController@getMenu');
+
+Route::post('/order', 'OrderController@order')->middleware('check.order');
