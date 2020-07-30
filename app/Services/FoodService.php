@@ -24,4 +24,14 @@ class FoodService
     {
         return $this->food_repository->getAll();
     }
+
+    public function getMenu()
+    {
+        return $this->food_repository->getMenu();
+    }
+
+    public function getUnAvailableFoods()
+    {
+        return $this->food_repository->getUnavailableFoods();
+    }
 }
