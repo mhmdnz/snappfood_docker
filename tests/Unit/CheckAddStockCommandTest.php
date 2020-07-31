@@ -3,10 +3,7 @@
 namespace Tests\Unit;
 
 use App\Console\Commands\AddStockCommand;
-use App\Ingredient;
 use App\Services\IngredientService;
-use Illuminate\Database\Eloquent\Model;
-use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 use PHPUnit\Framework\TestCase;
 
 class CheckAddStockCommandTest extends TestCase
@@ -16,20 +13,25 @@ class CheckAddStockCommandTest extends TestCase
      *
      * @return void
      */
-    public function testIncreaseWithDb()
+    public function testIncreaseStock()
     {
-        $mock_ingredient_service = \Mockery::mock(IngredientService::class)
-            ->makePartial();
-        $ingredient_collections = $this->getIngredientCollection();
-        $mock_ingredient_service->shouldReceive('getAll')->andReturn($ingredient_collections);
-
-        $addStockCommand = new AddStockCommand($mock_ingredient_service);
+        $ingredient_collection = $this->getIngredientCollection();
+        $addStockCommand = new AddStockCommand($this->getIngredientServiceMock($ingredient_collection));
         $addStockCommand->handle();
 
         $this->assertEquals(
-            json_encode($ingredient_collections),
+            json_encode($ingredient_collection),
             '[{"title":"Butter","stock":4},{"title":"Butter","stock":2}]'
         );
+    }
+
+    private function getIngredientServiceMock($ingredient_collection)
+    {
+        $mock_ingredient_service = \Mockery::mock(IngredientService::class)
+            ->makePartial();
+        $mock_ingredient_service->shouldReceive('getAll')->andReturn($ingredient_collection);
+
+        return $mock_ingredient_service;
     }
 
     private function getIngredientCollection()
