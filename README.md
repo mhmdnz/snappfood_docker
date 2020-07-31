@@ -4,9 +4,10 @@ The Application is wrriten on Laravel, if you are not familier with the environm
 
 [Laravel Installation](https://laravel.com/docs/7.x/installation)
 
+[Code Repository](https://github.com/mhmdnz/snappfood_docker.git)
 # Installation Guid
 
-  - [Clone project from Git repository](https://github.com/mhmdnz/snappfood_docker.git)
+  - [Clone project from Git repository](#Clone project From Git)
   - [Edit ENV file](#Edit-env-File)
   - [Install Composer Packages](#Install Composer Packages)
   - [Run DB migrations](#Run DB migrations)
@@ -18,7 +19,7 @@ The Application is wrriten on Laravel, if you are not familier with the environm
 ```sh
 $ mkdir snappfood
 $ cd Snappfood
-$ git clone "GIT ADDRESS" .
+$ git clone "https://github.com/mhmdnz/snappfood_docker.git" .
 ```
 
 ### Edit env File
