@@ -6,7 +6,7 @@ The Application is wrriten on Laravel, if you are not familier with the environm
 
 # Installation Guid
 
-  - [Clone project from Git repository](#Clone project From Git)
+  - [Clone project from Git repository](https://github.com/mhmdnz/snappfood_docker.git)
   - [Edit .ENV file](#Edit-.env-File)
   - [Install Composer Packages](#Install Composer Packages)
   - [Run DB migrations](#Run DB migrations)
@@ -77,3 +77,33 @@ $ ./vendor/bin/phpunit
 //you could run only one test by using this command
 $ phpunit /address of the test
 ```
+
+# Docker Installation Guid
+
+  - [Clone project from Git repository](https://github.com/mhmdnz/snappfood_docker.git)
+  - [Run Prepration File](#Run Prepration File)
+  
+```sh
+//it will bring project up
+$ docker-compose up --build -d
+$ docker exec -it php sh /tmp/Prepration.sh
+```
+
+## Some helpful commands
+
+```sh
+//to Run Tests
+$ docker exec -it php sh /tmp/RunTests.sh
+
+//to get fresh migration
+$ docker exec -it php sh /tmp/FreshMigrations.sh
+
+//to run composer install
+$ docker exec -it php sh /tmp/ComposerInstall.sh
+```
+
+> Please notice that, <br>
+> - due to lack of time , test and environment database
+    is same, and affect on each others so for the more accurate tests just run fresh migration 
+> - you could simply change database data <br>
+    just open "database/seeds" directory and feel free to make some changes for better tests 
