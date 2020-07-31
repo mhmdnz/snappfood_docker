@@ -6,12 +6,16 @@ The Application is wrriten on Laravel, if you are not familier with the environm
 
 # Installation Guid
 
+## Manualy
   - [Clone project from Git repository](https://github.com/mhmdnz/snappfood_docker.git)
   - [Edit ENV file](#Edit-env-File)
   - [Install Composer Packages](#Install-Composer-Packages)
   - [Run DB migrations](#Run-DB-migrations)
   - [Add laravel schedules to your cronjobs](#Add-laravel-schedules-to-your-cronjobs)
   - [Run Tests](#Run-Tests)
+  
+##Docker
+- [Docker](#Docker-Installation-Guid)
 
 ### Clone project From Git
 
@@ -81,7 +85,7 @@ $ phpunit /address of the test
 # Docker Installation Guid
 
   - [Clone project from Git repository](https://github.com/mhmdnz/snappfood_docker.git)
-  - [Run Prepration File](#Run Prepration File)
+  - [Run Prepration File](#Run-Prepration-File)
   
 ```sh
 //it will bring project up
