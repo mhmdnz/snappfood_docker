@@ -6,14 +6,14 @@ The Application is wrriten on Laravel, if you are not familier with the environm
 
 # Installation Guid
 
-  - [Fetch Code from Git repository](#Fetch Code From Git)
+  - [Clone project from Git repository](#Clone project From Git)
   - [Edit .ENV file](#Edit-.env-File)
   - [Install Composer Packages](#Install Composer Packages)
   - [Run DB migrations](#Run DB migrations)
   - [Add laravel schedules to your cronjobs](#Add laravel schedules to your cronjobs)
   - [Run Tests](#Run Tests)
 
-### Fetch Code From Git
+### Clone project From Git
 
 ```sh
 $ mkdir snappfood
